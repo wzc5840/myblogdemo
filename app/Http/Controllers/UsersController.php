@@ -50,14 +50,14 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        $this->sendEmailConfirmationTo($user);
-        session()->flash('success', '验证邮件已发送到你的注册邮箱上，请注意查收。');
-        return redirect('/');
+//        $this->sendEmailConfirmationTo($user);
+//        session()->flash('success', '验证邮件已发送到你的注册邮箱上，请注意查收。');
+//        return redirect('/');
 
 
-//        Auth::login($user);
-//        session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
-//        return redirect()->route('users.show',[$user]);
+        Auth::login($user);
+        session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
+        return redirect()->route('users.show',[$user]);
     }
     public function edit($id)
     {
@@ -101,8 +101,8 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'aufree@estgroupe.com';
-        $name = 'Aufree';
+        $from = 'test@test.com';
+        $name = 'teset';
         $to = $user->email;
         $subject = "感谢注册 Blog App 应用！请确认你的邮箱。";
 
