@@ -33,4 +33,5 @@ Route::post('password/reset', 'Auth\ResetPasswordController@postReset')->name('p
 
 Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
 
-
+Route::get('/test','TestController@show')->name('test_main');
+Route::get('/study','TestController@study')->name('test_study');

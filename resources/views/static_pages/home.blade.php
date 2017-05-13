@@ -27,6 +27,10 @@
             <p>
                 <a class="btn btn-lg btn-success" href="{{ route('signup') }}" role="button">现在注册</a>
             </p>
+            <p>
+                <a class="btn btn-lg" href="{{ route('test_main') }}" role="button">testMain</a>
+                <a class="btn btn-lg" href="{{ route('test_study') }}" role="button">testStudy</a>
+            </p>
         </div>
     @endif
 @stop
